@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera página!!</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript">
+        /*
+            Eventos
+        */
+
+
+        function handledClick() {
+
+            let username = document.getElementById('txtUsername').value;
+            let password = document.getElementById('txtPassword').value;
+
+            const prod = username*password;
+
+          /*  document.getElementById('results').innerHTML = `<b>Username:</b> ${username} <br><br> 
+            <b>Password:</b> ${password} `; */
+            document.getElementById('results').innerHTML = `<b>Multiplicación:</b> ${prod} `;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Startups - Covid</h2>
+
+        <div class="frame">
+            <h2 class="title_two" id="one">Inicio de sesión</h2>
+            <input id="txtUsername" type="text" placeholder="Usuario">
+            <br>
+            <br>
+            <input id="txtPassword" type="text" placeholder="Contraseña">
+            <br>
+            <br>
+            <button class="title_two" id="btnIniciarSesion" onclick="handledClick()">Iniciar sesión</button>
+        </div>
+        <div id="results">-- -- - --</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+h2 {
+    color: blueviolet;
+    font-size: 2em;
+    /* unidades relativas px em */
+}
+
+.title_two {
+    color: #888;
+}
+
+button {
+    width: 180px;
+}
+
+.frame{
+    border: dotted 2px #36b4ae;
+    border-radius: 20px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+/*
+CMYK
+        Colores css => css3
+        Hexadecimal  ==> Estructura   ==> #CCC  => #FFFFFF
+            RGB => Red Green Blue
+                => #CCC 
+                => #FFFFFF
+*/
+input{
+    padding: 2px 0 2px 5px;
+    /* top right botton left */
+}
+
+#txtPassword{
+    border: solid 2px rgb(100,180,100);/* 0 - 255  */
+}
+
+#results{
+    border: solid 2px #CCC;
+    margin: 10px auto ;
+    text-align: center;
+    width: 200px;
+}
