@@ -35,10 +35,10 @@ app.get('/getUsers', async (req, res) => {
 
     /* consulta a la db */
     const users = [
-        { id: '1', name: 'Juan', city: 'Medellin', age:18, salary:1000000 },
-        { id: '2', name: 'Pedro', city: 'Bogotá', age:23, salary:1000000 },
-        { id: '3', name: 'Camilo', city: 'Cali', age:27, salary:1000000 },
-        { id: '4', name: 'Andres', city: 'Medellin', age:22, salary:1000000 }
+        { id: '1', name: 'Juan', city: 'Medellin', age:18, salary:3200000 },
+        { id: '2', name: 'Pedro', city: 'Bogotá', age:23, salary:4100000 },
+        { id: '3', name: 'Camilo', city: 'Cali', age:27, salary:3500000 },
+        { id: '4', name: 'Andres', city: 'Medellin', age:22, salary:2800000 }
     ]
 
     res.send({

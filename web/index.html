@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primera página!!</title>
-   
+
     <link rel="stylesheet" href="./resources/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./resources/bootstrap/css/bootstrap-responsive.css">
@@ -22,21 +22,30 @@
 
     <script type="text/javascript">
 
- 
 
-        $(document).ready( function(){
 
-            $.get('http://localhost:9000/getUsers', ( users ) =>{
-                let listUsers = users[0]
+        $(document).ready(function () {
 
-                for( i in users ){
-                    document.getElementById('result').innerHTML ='';
-                    document.getElementById('result').innerHTML += JSON.stringify(users[i][0]);
-                    document.getElementById('result').innerHTML += JSON.stringify(users[i][1])
-                    document.getElementById('result').innerHTML += JSON.stringify(users[i][2]);
-                } 
+            $.get('http://localhost:9000/getUsers', (data) => {
 
-              //  document.getElementById('result').innerHTML = JSON.stringify(users);
+                document.getElementById('result').innerHTML = '';
+                const { users } = data
+
+                for (i in users) {
+                    // document.getElementById('result').innerHTML = '';
+                    document.getElementById('table_users').innerHTML += `
+                    <tr>
+                        <td>${users[i].id}</td>
+                        <td>${users[i].name}</td>
+                        <td>${users[i].city}</td>
+                        <td>${users[i].age}</td>
+                        <td>${users[i].salary}</td>
+                    </tr>
+
+                    `;
+                }
+
+                //  document.getElementById('result').innerHTML = JSON.stringify(users);
             })
 
 
@@ -78,14 +87,14 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="btnSave" >Save</button>
+                        <button type="button" class="btn btn-primary" id="btnSave">Save</button>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        
+
         <br>
         <br>
         <table class="table table-striped">
@@ -98,32 +107,7 @@
                     <th scope="col">Salario</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-            </tbody>
+            <tbody id="table_users"></tbody>
         </table>
         <br>
         <br>
@@ -133,7 +117,7 @@
         <br>
         <br>
         <br>
-            <div id="result"> ---- -- -- </div>
+        <div id="result"> ---- -- -- </div>
 
     </div>
 </body>
